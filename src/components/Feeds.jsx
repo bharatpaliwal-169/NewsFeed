@@ -16,8 +16,7 @@ export default function Feeds(props) {
   const url = `https://newsapi.org/v2/top-headlines?country=${state.country}&category=${state.category}&q=${state.query}&apiKey=1b3e355c8a6a49f88d9e060dc5e960a5`;
 
   useEffect(()=>{
-    let isCanclled = false;
-    if(!isCanclled){
+    // let isCanclled = false;
       fetch(url)
       .then(response => response.json())
       .catch(error => console.log(error))
@@ -25,8 +24,8 @@ export default function Feeds(props) {
         setFeed(data.articles);
         setLoading(false)
       })
-    }
-    return () => isCanclled = true;
+    
+    // return () => isCanclled = true;
     
   },[url]);
 
