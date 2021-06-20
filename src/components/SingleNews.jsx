@@ -4,14 +4,14 @@ import {Card ,Button} from 'react-bootstrap'
 
 export default function SingleNews(props) {
   const title = props.title;
-  var img = props.urlToImage;
+  var img = props.image;
   if(img === null){
     img = '/images/default.jpg';
   }
   const date = props.publishedAt;
   const content = props.description;
   const url = props.url;
-  var author = props.author;
+  var author = props.source.name;
   if(author === null){
     author = 'Unknown';
   }

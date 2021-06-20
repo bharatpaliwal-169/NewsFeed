@@ -13,14 +13,16 @@ export default function Feeds(props) {
   // const [category ,setCategory] = useState('business');
   const [state,setState] = useState({country:'in' , category: 'business' , query: ''});
   const [store,setStore] = useState({country:'' , category: '',query: ''})
-  const url = `https://newsapi.org/v2/top-headlines?country=${state.country}&category=${state.category}&q=${state.query}&apiKey=1b3e355c8a6a49f88d9e060dc5e960a5`;
-
+  // const url = `https://newsapi.org/v2/top-headlines?country=${state.country}&category=${state.category}&q=${state.query}&apiKey=1b3e355c8a6a49f88d9e060dc5e960a5`;
+  // const API_Token = '98d217441b00c0f4332d5350dcde924c';
+  const url = `https://gnews.io/api/v4/top-headlines?country=${state.country}&topic=${state.category}&token=98d217441b00c0f4332d5350dcde924c`;
   useEffect(()=>{
     // let isCanclled = false;
       fetch(url)
       .then(response => response.json())
       .catch(error => console.log(error))
       .then((data) => {
+        console.log(data);
         setFeed(data.articles);
         setLoading(false)
       })
@@ -70,10 +72,10 @@ export default function Feeds(props) {
               <div className="col-6 col-sm-4 text-center">
                 <label htmlFor="Category">Choose a Category:</label>
                   <select  name="category" id="category" value={store.category} onChange={handleChange}>
+                      <option value="breaking-news">breaking-news</option>
                       <option value="business">business</option>
                       <option value="health">health</option>
                       <option value="sports">sports</option>
-                      <option value="general">general</option>
                       <option value="technology">technology</option>
                       <option value="entertainment">entertainment</option>
                   </select>
