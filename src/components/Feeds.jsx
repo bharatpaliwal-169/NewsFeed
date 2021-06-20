@@ -15,7 +15,7 @@ export default function Feeds(props) {
   const [store,setStore] = useState({country:'' , category: '',query: ''})
   // const url = `https://newsapi.org/v2/top-headlines?country=${state.country}&category=${state.category}&q=${state.query}&apiKey=1b3e355c8a6a49f88d9e060dc5e960a5`;
   // const API_Token = '98d217441b00c0f4332d5350dcde924c';
-  const url = `https://gnews.io/api/v4/top-headlines?country=${state.country}&topic=${state.category}&token=98d217441b00c0f4332d5350dcde924c`;
+  const url = `https://gnews.io/api/v4/top-headlines?country=${state.country}&topic=${state.category}&language=en&token=98d217441b00c0f4332d5350dcde924c`;
   useEffect(()=>{
     // let isCanclled = false;
       fetch(url)
