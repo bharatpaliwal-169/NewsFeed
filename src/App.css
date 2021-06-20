@@ -42,6 +42,6 @@ label:focus,
 .card-x{
   border-radius: 20px!important;
   background: #f9f9f9!important;
-  box-shadow:  20px 20px 50px #dedede,
-              -20px -20px 50px #ffffff!important;
+  box-shadow:  5px 5px 10px #dedede,
+              -5px -5px 10px #ffffff!important;
 }
