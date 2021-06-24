@@ -1,5 +1,7 @@
 import React from 'react'
-import {Spinner} from 'react-bootstrap'
+
+import {CircularProgress,Typography} from '@material-ui/core';
+
 
 export default function Loading() {
   return (
@@ -7,8 +9,10 @@ export default function Loading() {
       <div className="container mt-5">
         <div className="row mt-5">
           <div className="col-12 text-center mt-5">
-            <h1> Wait Feed is getting ready for you...</h1>
-            <Spinner animation="border" variant="info" />
+            <Typography variant='h3' gutterBottom>
+              The NewsFeed App
+            </Typography>
+            <CircularProgress />
           </div>
         </div>
       </div>

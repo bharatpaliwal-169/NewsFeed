@@ -1,6 +1,12 @@
 import React from 'react'
-import {Card ,Button} from 'react-bootstrap'
-
+// import {Card ,Button} from 'react-bootstrap'
+import{Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+  Button} from '@material-ui/core'
 
 export default function SingleNews(props) {
   const title = props.title;
@@ -18,27 +24,36 @@ export default function SingleNews(props) {
   return (
     <React.Fragment>
       <div className="col-12 col-sm-4 mt-2 mb-2 ">
-      <Card border='light' className='card-x'>
-        <a href={url} target="_blank" rel="noreferrer" >
-          <Card.Img variant="top" src={img} alt={date} height="240" />
-        </a>
-        <Card.Body>
+        <Card className='card-x' variant='outlined'>
+          <CardActionArea>
+            <a href={url} target="_blank" rel="noreferrer"  >
+              <CardMedia
+                component="img"
+                alt={date}
+                height="240"
+                image={img}
+                title="Contemplative Reptile"
+                />
+            </a>
+          </CardActionArea>
           
-          <Card.Title className="mt-3 mb-3">{title}</Card.Title>
-          
-          <Card.Text className='text-muted'>
-            {content}
-          </Card.Text>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {title}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {content}
+            </Typography>
+          </CardContent>
 
-          <a href={url} target="_blank" rel="noreferrer"  >
-            <Button variant="outline-primary">Read More</Button>
-          </a>
-          
-          <Card.Footer className="text-muted mt-4 mb-2">
-            News Author : {author}
-          </Card.Footer>
-        </Card.Body>
-      </Card>
+          <CardActions>
+            <a href={url} target="_blank" rel="noreferrer" class="nav-link">
+              <Button size="medieum" color="primary" variant="contained">
+                Learn More
+              </Button>
+            </a>
+          </CardActions>
+        </Card>
       </div>
     </React.Fragment>
   )

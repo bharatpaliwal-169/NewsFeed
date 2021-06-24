@@ -1,19 +1,12 @@
 import React from 'react'
+import {Typography} from '@material-ui/core'
 function Footer(props) {
   return (
     <React.Fragment>
       <div className="container-fluid">
         <div className="row bg-dark text-white">
-          {/* <div className="col-6 mt-5 text-center">
-            <h6>Liked the Feed!!</h6>
-          </div>
-          <div className="col-6 mt-5 text-center">
-            <h6>Developer's Profile :</h6>
-            <p>
-            </p>
-          </div> */}
-          <div className="col-12 text-center">
-            <p className='text-muted'>&copy; Bharat Paliwal</p>
+          <div className="col-12 text-center mt-5 mb-4">
+            <Typography variant='h5' className='text-muted'>&copy; Bharat Paliwal</Typography>
           </div>
         </div>
       </div>
