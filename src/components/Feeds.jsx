@@ -13,8 +13,8 @@ export default function Feeds(props) {
   const [store,setStore] = useState({country:'' , category: '',query: ''})
 
   //api
-  const API_Token = process.env.REACT_APP_API_KEY;
-  const url = `${process.env.REACT_APP_BASE_URL}?country=${state.country}&topic=${state.category}&language=en&token=${API_Token}`;
+  const API_Token = '98d217441b00c0f4332d5350dcde924c';
+  const url = `https://gnews.io/api/v4/top-headlines?country=${state.country}&topic=${state.category}&language=en&token=${API_Token}`;
   
   useEffect(()=>{
       fetch(url)
