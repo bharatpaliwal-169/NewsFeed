@@ -91,7 +91,7 @@ export default function Feeds(props) {
       
               <main className="row align-items-center justify-content-center">
       
-                {Feed.map((item)=>{
+                {Feed.slice(0,9).map((item)=>{
                   // console.log(Feed);
                   return(
                     <Single {...item} key={item.publishedAt} />

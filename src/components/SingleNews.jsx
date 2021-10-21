@@ -39,16 +39,16 @@ export default function SingleNews(props) {
           
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              {title}
+              {title.length > 20 ? title.substring(0, 20) : title}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              {content}
+              {content.length > 100 ? content.substring(0,100) : content}
             </Typography>
           </CardContent>
 
           <CardActions>
-            <a href={url} target="_blank" rel="noreferrer" class="nav-link">
-              <Button size="medieum" color="primary" variant="contained">
+            <a href={url} target="_blank" rel="noreferrer" className="nav-link">
+              <Button size="large" color="primary" variant="contained">
                 Learn More
               </Button>
             </a>
